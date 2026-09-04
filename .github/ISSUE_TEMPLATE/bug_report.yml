@@ -1,0 +1,106 @@
+name: "Bug Report"
+description: "Something isn't working as expected"
+title: "[Bug] "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. The more of this you fill in, the faster it gets fixed.
+
+  - type: input
+    id: version
+    attributes:
+      label: "Quay Version"
+      description: "Settings → About"
+      placeholder: "e.g. 0.9.2"
+    validations:
+      required: true
+
+  - type: input
+    id: macos
+    attributes:
+      label: "macOS Version"
+      placeholder: "e.g. macOS 15.3 (Sequoia)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: agent
+    attributes:
+      label: "Agent"
+      description: "Which agent were you running?"
+      options:
+        - Claude Code
+        - Codex
+        - Ollama local model
+        - Multiple / Not specific
+        - No agent involved
+    validations:
+      required: true
+
+  - type: dropdown
+    id: context
+    attributes:
+      label: "Where in Quay"
+      options:
+        - Agent panel
+        - Home
+        - Sidebar / Spaces
+        - Browser panel
+        - Review / diff
+        - Skills
+        - Memory
+        - Notch / notifications
+        - Sky view
+        - Break overlay
+        - Settings
+        - Onboarding
+        - Updating
+        - Other / not sure
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "What happened?"
+      placeholder: "When I..., I expected..., but instead..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce"
+      placeholder: |
+        1. Open a Space with two panels
+        2. ...
+        3. ...
+    validations:
+      required: false
+
+  - type: upload
+    id: logs
+    attributes:
+      label: "Diagnostic report"
+      description: "Settings → About → Export Diagnostic Report. It contains no file paths, branch names, account names or transcript contents — but read it before uploading, because issue attachments are public."
+    validations:
+      required: false
+      accept: ".zip"
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots or screen recordings"
+      description: "Drag and drop images or videos here"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: search
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I searched existing issues and this hasn't been reported yet"
+          required: true

@@ -1,0 +1,62 @@
+name: "Feature Request"
+description: "Suggest an improvement or new feature"
+title: "[Feature] "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the problem you're solving, not only the solution you have in mind.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or motivation"
+      description: "What are you trying to do that Quay makes hard today?"
+      placeholder: "I often find myself..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Proposed solution"
+      description: "How do you imagine this working?"
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives you've tried"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Area"
+      options:
+        - Agent panels / terminal
+        - Home
+        - Spaces, Projects & identities
+        - Parallel agents / worktrees
+        - Session history & search
+        - Skills
+        - Memory
+        - Notifications / notch
+        - Review & diffs
+        - Browser panels
+        - Settings & appearance
+        - Onboarding
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: search
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I searched existing issues and this hasn't been requested yet"
+          required: true
