@@ -37,7 +37,7 @@ body:
         - Multiple / Not specific
         - No agent involved
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: context
